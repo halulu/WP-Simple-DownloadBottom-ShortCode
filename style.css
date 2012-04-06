@@ -1,0 +1,31 @@
+
+#simple-download-button table td{
+	padding: 5px;
+}
+#simple-download-button h3{
+	border-left: 5px solid #DDDDDD;
+	padding-left: 10px;
+}
+#simple-download-button .box{
+	border: 1px solid #DDDDDD;
+	padding: 20px;
+	border-radius: 6px 6px 6px 6px;
+	margin-top:10px;
+}
+
+#simple-download-button .box2{
+	border: 1px dotted #778899;
+	padding: 20px;
+	border-radius: 6px 6px 6px 6px;
+	margin-top:10px;
+}
+#simple-download-button .box2 h3{
+	border-left: 5px solid #778899;
+	padding-left: 10px;
+}
+
+
+#simple-download-button ul{
+	list-style-type: disc;
+	margin-left: 20px;
+}
