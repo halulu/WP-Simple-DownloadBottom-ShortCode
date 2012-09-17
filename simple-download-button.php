@@ -4,7 +4,7 @@
  * Plugin URI: http://tech.halulu.org/?p=849
  * Author: <a href="http://www.halulu.tech/">Halulu</a>
  * Author URI: http://tech.halulu.org/?p=849
- * Version: 1.0
+ * Version: 1.1
  * Description:ショートコードでダウンロードボタンを表示。DLプログラム付きでソースコードや画像もダウンロードできます。Display CSS3 dwonload bottons by simple Shortcode. This plugin comes with a downloading program that let site visitors donwload source code and images, such as html, php and jpeg.
  */
 
@@ -87,17 +87,15 @@ function disp_downloadButton($atts) {
 			'%plugin_url%',
 			'%file%',
 			'%label%',
-			'%name%',
-			'%download_dir%'
+			'%name%'
 		),
 		array(
 			$style,
 			$plugin_url,
 			$file,
-			$label,
-			$download_dir
+			$label
 		),
-		'<div id="simple-download-button"><button %style% onclick="location.href=\'%plugin_url%?file=%file%&download_dir=%download_dir%\'"><b>%label%</b></button></div>'
+		'<div id="simple-download-button"><button %style% onclick="location.href=\'%plugin_url%?file=%file%\'"><b>%label%</b></button></div>'
 	);	
 	
 	return $html;

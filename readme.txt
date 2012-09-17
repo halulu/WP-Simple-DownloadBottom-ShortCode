@@ -3,12 +3,12 @@ Plugin Name: Simple Download Button Shortcode
 Plugin URI: http://tech.halulu.org/?p=849
 Description: Display CSS3 dwonload bottons by simple Shortcode and lets site visitors donwload source code and images, such as html, php and jpeg.
 Contributors: Halulu
-Version: 1.0
+Version: 1.1
 Author URI: http://tech.halulu.org
 Tags: download, button, shortcode
 Requires at least: 3.0
-Tested up to: 3.3.1
-Stable tag: 1.0.0
+Tested up to: 3.4.2
+Stable tag: 1.1.0
 
 Display CSS3 dwonload bottons by simple Shortcode.
 
@@ -58,3 +58,5 @@ your-wordpress-home/wp-content/plugins/simple-download-button/download/
 
 = 1.0 =
 * First Version
+= 1.1 =
+* Sept17.2012 Reported vulnerability corrected. Verify GET parameter 'file'. From this version, downloding filename can contains only 'a-z', 'A-Z' '0-9', '-' and '_'

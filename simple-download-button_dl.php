@@ -5,9 +5,19 @@
 
 	/* GET param */
 	$filename = $_GET['file'];
-	if(!$filename){ die("ERROR: a file name to download is not set!"); }
-	
-	$download_filepath = $download_dir. $filename;
+		
+	/* Verify file parameter */
+	$fileinfo =	pathinfo($filename);	
+	if(!$fileinfo['filename']){
+		die("ERROR: Downloading filename is not set. Please set the name. the short code should be wriiten like [dlbt file=dummy.html] ");
+	}elseif(!$fileinfo['extension']){
+		die("ERROR: Unappropriate downloading filename: $filename: no extention.");		
+	}
+	if(!preg_match('/^[a-zA-Z0-9_-]/',$fileinfo['filename'])) {
+		die("ERROR: Unappropriate downloading filename: $filename: filename can contains only 'a-z', 'A-Z' '0-9', '-' and '_'");		
+	}
+	// making file path		
+	$download_filepath = $download_dir. $fileinfo['filename']. '.'. $fileinfo['extension'];
 	
 	// set a file name showed in the dialog box.
 	if(!$dispname){$dispname = $filename;}
@@ -15,7 +25,7 @@
 
 	/* set the Content-type depends on the extention */
 	if (!file_exists($download_filepath)) {
-		die("ERROR: There is not shuch file. Please hit the back button to return.");
+		die("ERROR: There is not shuch file at $download_filepath.");
 	}else{
 		$file_info = pathinfo($download_filepath);
 		$ext = strtolower($file_info["extension"]);
